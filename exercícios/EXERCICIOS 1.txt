@@ -1,0 +1,155 @@
+#EXERCICIO 1
+Scanner sc = new Scanner(System.in);
+		double x, y;
+		x = sc.nextDouble();
+		y = sc.nextDouble();
+		double soma = x + y;
+		System.out.println("Valores Digitados: ");
+		System.out.println(x);
+		System.out.println(y);
+		System.out.println("A soma dos números é: " + soma);
+		
+		sc.close();
+#EXERCICIO 2
+import java.util.Scanner;
+import java.util.Locale;
+
+public class josue {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Double pi = 3.14159;
+		Double x;
+		
+		System.out.println("Digite o valor do raio: ");
+		x = sc.nextDouble();
+		Double y = Math.pow(x,2);
+		Double area = pi * y;
+		System.out.printf("O valor da área é de: %.4f", area);
+		
+		sc.close();	
+	}
+
+}
+#EXERCICIO 3
+import java.util.Scanner;
+import java.util.Locale;
+
+public class josue {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int x,y,z,a;
+		System.out.println("Digite os 4 valores: ");
+		x = sc.nextInt();
+		y = sc.nextInt();
+		z = sc.nextInt();
+		a = sc.nextInt();
+		int dif = ((x*y)-(z*a));
+		System.out.printf("DIFERENÇA = %d", dif);
+		
+		
+		
+		sc.close();	
+	}
+
+}
+#EXERCICIO 4
+import java.util.Scanner;
+import java.util.Locale;
+
+public class josue {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int x;
+		System.out.println("Digite o seu número:");
+		x = sc.nextInt();
+		Double y;
+		System.out.println("Digite suas horas trabalhadas:");
+		y = sc.nextDouble();
+		Double z;
+		System.out.println("Quanto recebe por hora:");
+		z = sc.nextDouble();
+		Double sal = (z*y);
+		
+		System.out.printf("NÚMERO: %d",x);
+		System.out.println();
+		System.out.printf("SALÁRIO: U$%.2f",sal);
+		
+		
+		sc.close();	
+	}
+
+}
+#EXERCICIO 5
+import java.util.Scanner;
+import java.util.Locale;
+
+public class josue {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int a,b;
+		double c, soma;
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextDouble();
+		
+		int d,x;
+		double y;
+		d = sc.nextInt();
+		x = sc.nextInt();
+		y = sc.nextDouble();
+		soma = ((x*y)+(b*c));
+		
+		System.out.printf("Valor a ser pago: %.2f", soma);
+		
+		
+		sc.close();	
+	}
+
+}
+#EXERCICIO 6
+import java.util.Scanner;
+import java.util.Locale;
+
+public class josue {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		double a,b,c;
+		a = sc.nextDouble();
+		b = sc.nextDouble();
+		c = sc.nextDouble();
+		double triang = ((a*c)/2);
+		double x = 3.14159;
+		double circ = (Math.pow(c,2)*x);
+		double trap = ((a+b)/2*c);
+		double quadr = (b*b);
+		double retang = (a*b);
+		
+		System.out.printf("TRIANGULO: %.3f%n", triang);
+		System.out.printf("CIRCULO: %.3f%n", circ);
+		System.out.printf("TRAPEZIO: %.3f%n", trap);
+		System.out.printf("QUADRADO: %.3f%n", quadr);
+		System.out.printf("RETANGULO: %.3f%n", retang);
+		
+		
+		sc.close();	
+	}
+
+}
+
+
+

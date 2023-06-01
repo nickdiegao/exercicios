@@ -1,0 +1,76 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class habbo {
+
+    public static void main(String[]args){
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Quantos quartos serão alugados? ");
+        int n = sc.nextInt();
+
+        polo[] vetor = new polo[n];
+
+        for(int i=0;i<n;i++){
+            System.out.printf("Quarto #%d:\n",i+1);
+            System.out.print("Nome: ");
+            sc.nextLine();
+            String name = sc.nextLine();
+            System.out.print("Email: ");
+            String email = sc.nextLine();
+            System.out.print("Quarto: ");
+            int quarto = sc.nextInt();
+            if(quarto>9){
+                System.out.println("Quarto não registrado no banco de dados!");
+                System.out.println("Reinicie o programa!");
+                vetor[i] = new polo(name,email);
+            }
+            else{
+                vetor[i] = new polo(name,email,quarto);
+            }
+        }
+        
+        System.out.println("Quartos ocupados: ");
+        for(int i=0;i<n;i++){
+            System.out.printf("%d: %s, %s\n",vetor[i].getQuarto(),
+            vetor[i].getName(),
+            vetor[i].getEmail());
+        }
+
+        
+        sc.close();
+    }
+}
+public class polo {
+    private String name;
+    private String email;
+    private int quarto;
+    
+    public polo(String name,String email,int quarto){
+        this.name=name;
+        this.email=email;
+        this.quarto=quarto;
+    }
+    
+    public polo(String name,String email){
+        this.name=name;
+        this.email=email;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setName(String name){
+        this.name=name;
+    }
+
+    public int getQuarto(){
+        return quarto;
+    }
+}

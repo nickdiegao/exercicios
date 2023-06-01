@@ -1,0 +1,191 @@
+#EXERCICIO 1
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int x;
+		System.out.println("Digite seu número inteiro: ");
+		x = sc.nextInt();
+		if (x > 0) {
+			System.out.println("Positivo");
+		}
+		else {
+			System.out.println("Negativo");
+		}
+		sc.close();
+		}
+	}
+#EXERCICIO 2
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int x;
+		System.out.println("Digite seu número inteiro: ");
+		x = sc.nextInt();
+		if (x%2==0) {
+			System.out.println("Par");
+		}
+		else {
+			System.out.println("Impar");
+		}
+		sc.close();
+		}
+	}
+#EXERCICIO 3
+import java.util.Scanner;
+//ALT 124 ||
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int x,y;
+		System.out.println("Digite seus números: ");
+		x = sc.nextInt();
+		y = sc.nextInt();
+		if (x % y == 0 || y % x == 0 ) {
+			System.out.println("São múltiplos");
+		}
+		else {
+			System.out.println("Não são múltiplos");
+		}
+		sc.close();
+		}
+	}
+#EXERCICIO 4
+import java.util.Scanner;
+//ALT 124 ||
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int x,y;
+		System.out.println("Digite a hora inicial: ");
+		x = sc.nextInt();
+		System.out.println("Digite a hora final: ");
+		y = sc.nextInt();
+		
+		int duracao;
+		if (x<y) {
+			duracao = x - y;
+		}
+		else {
+			duracao = 24-x+y;
+		}
+		System.out.printf("O jogo durou: %dh",duracao);
+		}
+	}
+#EXERCICIO 5
+import java.util.Locale;
+import java.util.Scanner;
+//ALT 124 ||
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+		System.out.println("Código   Especificação    Preço");
+		System.out.println("  1      Cachorro-quente  R$4.00");
+		System.out.println("  2      X-Salada         R$4.50");
+		System.out.println("  3      X-Bacon          R$5.00");
+		System.out.println("  4      Torrada Simples  R$2.00");
+		System.out.println("  5      Refrigerante     R$1.50");
+		double x,y;
+		System.out.println("Digite o código do produto: ");
+		x = sc.nextInt();
+		System.out.println("Digite a quantidade: ");
+		y = sc.nextInt();
+		double conta;
+		if (x == 1) {
+			conta = (4 * y);
+			System.out.printf("VALOR DA CONTA: R$%.2f",conta);
+		}
+		else {
+			if (x == 2) {
+				conta = (4.5 * y);
+				System.out.printf("VALOR DA CONTA: R$%.2f",conta);
+			}
+			else {
+				if (x == 3) {
+					conta = (5 * y);
+					System.out.printf("VALOR DA CONTA: R$%.2f",conta);
+				}
+				else {
+					if (x == 4) {
+						conta = (2 * y);
+						System.out.printf("VALOR DA CONTA: R$%.2f",conta);
+					}
+					else {
+						if (x == 5) {
+							conta = (1.5 * y);
+							System.out.printf("VALOR DA CONTA: R$%.2f",conta);
+						}
+						else {
+							System.out.println("Número do código está incorreto!");
+						}
+					}
+				}
+			}
+		}
+		
+		
+		
+
+		sc.close();
+		}
+	}
+#EXERCICIO 6
+import java.util.Locale;
+import java.util.Scanner;
+//ALT 124 ||
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+		double x;
+		System.out.println("Digite o valor de X: ");
+		x = sc.nextDouble();
+		if (x < 0 || x > 100) {
+			System.out.println("Fora de intervalo");
+		}
+		else {
+			if (x <= 25) {
+				System.out.println("Intervalo ([0,25])");
+			}
+			else {
+				if (x <= 50) {
+					System.out.println("Intervalo ([25,50])");
+				}
+				else {
+					if (x <= 75) {
+						System.out.println("Intervalo ([50,75])");
+					}
+					else {
+						if (x <= 100) {
+							System.out.println("Intervalo ([75,100])");
+						}
+					}
+				}
+			}
+		}
+
+		sc.close();
+		}
+	}
+#EXERCICIO 7
+	

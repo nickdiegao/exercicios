@@ -1,0 +1,683 @@
+#EXERCICIO
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ex;
+
+public class EXERCICIOS {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos números você vai digitar? ");
+		int n = sc.nextInt();
+		
+		ex[] vect = new ex[n];
+		
+		for(int i=0;i<vect.length;i++) {
+			System.out.print("Digite um número: ");
+			int number = sc.nextInt();
+			vect[i] = new ex(number);
+		}
+		int sum = 0;
+		
+		System.out.println("Números negativos:");
+		for(int i=0;i<vect.length;i++) {
+			if (vect[i].getNumber() < 0) {
+				sum = vect[i].getNumber();
+				System.out.println(sum);
+			}
+		}
+		sc.close();
+	}
+
+}
+package entities;
+
+public class ex {
+	private int number;
+
+	public ex(int number) {
+		this.number = number;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	
+	
+	
+}
+#EXERCICIO 2
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ex;
+
+
+public class EXERCICIOS {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos números você vai digitar? ");
+		int n = sc.nextInt();
+		
+		ex[] vetor = new ex[n];
+		
+		for(int i=0;i<vetor.length;i++) {
+			System.out.print("Digite um número: ");
+			double number = sc.nextInt();
+			vetor[i] = new ex(number);
+		}
+		
+		System.out.print("Valores: ");
+		for(int i=0;i<n;i++) {
+			System.out.printf("%.1f ",vetor[i].getNumber());
+		}
+		System.out.println("");
+		double sum = 0;
+		for(int i=0;i<n;i++) {
+			sum += vetor[i].getNumber();
+		}
+		
+		double media = sum/n;
+		
+		System.out.printf("SOMA = %.2f",sum);
+		System.out.println("");
+		System.out.printf("MÉDIA = %.2f",media);
+		
+
+		sc.close();
+	}
+
+}
+package entities;
+
+public class ex {
+	private double number;
+
+	public ex(double number) {
+		this.number = number;
+	}
+
+	public double getNumber() {
+		return number;
+	}
+
+	public void setNumber(double number) {
+		this.number = number;
+	}
+	
+	
+	
+}
+#EXERCICIO 3
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ex;
+
+
+public class EXERCICIOS {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantas pessoas serão registradas: ");
+		int n = sc.nextInt();
+		
+		ex[] vetor = new ex[n];
+
+		for(int i=0;i<n;i++) {
+			System.out.printf("Dados da %da pessoa: \n",i + 1);
+			System.out.print("Nome: ");
+			sc.nextLine();
+			String name = sc.nextLine();
+			System.out.print("Idade: ");
+			int idade = sc.nextInt();
+			System.out.print("Altura: ");
+			double alt = sc.nextDouble();
+			vetor[i] = new ex(name,idade,alt);
+		}
+		
+		double sum = 0;
+		for(int i=0;i<n;i++) {
+			sum += vetor[i].getAlt();
+		}
+		double media = sum/n;
+		System.out.printf("Altura média: %.2f",media);
+		System.out.println("");
+		
+		int qtd = 0;
+		System.out.println("Pessoas com menos de 16 anos: ");
+		for(int i=0;i<n;i++) {
+			if(vetor[i].getIdade()<16) {
+				qtd++;
+			}	
+		}
+		
+		double total = ((double)qtd/n)*100;
+		System.out.println("Pessoas com menos de 16: "+total+"%");
+		
+		for(int i=0;i<n;i++) {
+			if(vetor[i].getIdade()<16) {
+				System.out.println(vetor[i].getName());
+			}
+		}
+		
+		
+		sc.close();
+	}
+
+}
+package entities;
+
+public class ex {
+	private String name;
+	private int idade;
+	private double alt;
+	
+	public ex(String name, int idade, double alt) {
+		this.name = name;
+		this.idade = idade;
+		this.alt = alt;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public double getAlt() {
+		return alt;
+	}
+
+	public void setAlt(double alt) {
+		this.alt = alt;
+	}
+}
+#EXERCICIO 4
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ex;
+
+public class EXERCICIOS {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos números você vai digitar? ");
+		int n = sc.nextInt();
+		
+		ex[] vetor = new ex[n];
+		
+		for(int i=0;i<vetor.length;i++) {
+			System.out.printf("Digite o %dº número: ",i + 1);
+			int number = sc.nextInt();
+			vetor[i] = new ex(number);
+		}
+		
+		System.out.println("Números pares: ");
+		int sum = 0;
+		for(int i=0;i<n;i++) {
+			if(vetor[i].getNumber()%2==0) {
+				System.out.printf("%d ",vetor[i].getNumber());
+				sum++;
+			}
+		}
+		System.out.println("");
+			System.out.println("Quantidade de pares: "+sum);
+	
+		
+		sc.close();
+	}
+
+}
+package entities;
+
+public class ex {
+	private int number;
+
+	public ex(int number) {
+		this.number = number;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	
+	
+	
+}
+#EXERCICIO 5
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ex;
+
+public class EXERCICIOS {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos valores terão cada vetor: ");
+		int n = sc.nextInt();
+		
+		ex[] vetor1 = new ex[n];
+		ex[] vetor2 = new ex[n];
+		
+		System.out.println("Digite os valores do vetor 1: ");
+		for(int i=0;i<n;i++) {
+			int number = sc.nextInt();
+			vetor1[i] = new ex(number);
+		}
+		
+		System.out.println("Digite os valores do vetor 2: ");
+		for(int i=0;i<n;i++) {
+			int number = sc.nextInt();
+			vetor2[i] = new ex(number);
+		}
+		
+		int sum = 0;
+		for(int i=0;i<n;i++) {
+			sum = vetor1[i].getNumber() + vetor2[i].getNumber();
+			System.out.println(sum);
+		}
+		
+		
+		
+		sc.close();
+	}
+
+}
+package entities;
+
+public class ex {
+	private int number;
+	
+	public ex(int number) {
+		this.number = number;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+}
+#EXERCICIO 6
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ex;
+
+public class EXERCICIOS {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos elementos terão no vetor? ");
+		int n = sc.nextInt();
+		
+		ex[] vetor = new ex[n];
+		
+		for(int i=0;i<n;i++) {
+			System.out.printf("Digite o %dº número: ",i + 1);
+			double number = sc.nextDouble();
+			vetor[i] = new ex(number);		
+		}
+		
+		double sum = 0;
+		for(int i=0;i<n;i++) {
+			sum += vetor[i].getNumber();
+		}
+		double media = sum / n;
+		
+		System.out.printf("Média do vetor: %.1f\n",media);
+		System.out.println("Elementos abaixo da média: ");
+		for(int i=0;i<n;i++) {
+			if(vetor[i].getNumber()<media) {
+				System.out.println(vetor[i].getNumber());;
+			}
+		}
+
+		
+		
+		
+		sc.close();
+	}
+
+}
+package entities;
+
+public class ex {
+	private double number;
+
+	public ex(double number) {
+		this.number = number;
+	}
+
+	public double getNumber() {
+		return number;
+	}
+
+	public void setNumber(double number) {
+		this.number = number;
+	}
+	
+	
+	
+
+	
+}
+#EXERCICIO 7
+import java.util.Locale;
+import java.util.Scanner;
+
+public class salamaleico {
+
+
+    public static void main(String[]args){
+
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Quantos números terão o vetor? ");
+        int n = sc.nextInt();
+
+        pao[] vetor = new pao[n];
+
+        for(int i=0;i<n;i++){
+            System.out.printf("Digite o %dº número: ",i+1);
+            int number = sc.nextInt();
+            vetor[i] = new pao(number);
+        }
+
+        int sum = 0;
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(vetor[i].getNumber()%2==0){
+                sum+=vetor[i].getNumber();
+                count++;
+            }
+        }
+        int media = sum/count;
+        if(count>0){
+            System.out.printf("Média dos pares: %d",media);
+        }
+        else{
+            System.out.println("Nenhum número par!");
+        }
+
+
+        
+
+
+        sc.close();
+    }
+}
+package entities;
+
+public class pao {
+	private int number;
+
+	public pao(int number) {
+		this.number = number;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+}
+#EXERCICIO 7
+import java.util.Locale;
+import java.util.Scanner;
+
+public class salamaleico {
+
+    public static void main(String[]args){
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Quantas pessoas serão cadastradas? ");
+        int n = sc.nextInt();
+
+        pao[] vetor1 = new pao[n];
+        String[] vetor2 = new String[n];
+
+        for(int i=0;i<n;i++){
+            System.out.printf("Dados da %dº pessoa:",i+1);
+            System.out.println("");
+            System.out.print("Nome: ");
+            sc.nextLine();
+            vetor2[i] = sc.nextLine();
+            System.out.print("Idade: ");
+            int idade = sc.nextInt();
+            vetor1[i] = new pao(idade);
+        }
+
+        int dog = 0;
+        int maior = vetor1[0].getIdade();
+        for(int i=0;i<n;i++){
+            if(vetor1[i].getIdade()>maior){
+                maior = vetor1[i].getIdade();
+                dog = i;
+            }
+        }
+        System.out.println("PESSOA MAIS VELHA: "+vetor2[dog]);
+
+        sc.close();
+    }
+
+}
+public class pao {
+    private int idade;
+
+    public pao(int idade){
+        this.idade = idade;
+    }
+    
+    public int getIdade(){
+        return idade;
+    }
+}
+#EXERCICIO 8
+import java.util.Locale;
+import java.util.Scanner;
+
+public class salamaleico {
+
+    public static void main(String[]args){
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Quantos alunos serão digitados? ");
+        int n = sc.nextInt();
+
+        pao[] vetor = new pao[n];
+
+        for(int i=0;i<n;i++){
+            System.out.printf("Dados do %dº aluno: ",i+1);
+            System.out.println("");
+            sc.nextLine();
+            String nome = sc.nextLine();
+            double nota1 = sc.nextDouble();
+            double nota2 = sc.nextDouble();
+            vetor[i] = new pao(nome,nota1,nota2);
+        }
+
+        System.out.println("Alunos aprovados: ");
+        double media;
+        for(int i=0;i<n;i++){
+            media = (vetor[i].getNota1() + vetor[i].getNota2())/2;
+            if(media >= 6){
+                System.out.println(vetor[i].getNome());
+            }
+        }
+
+    
+
+
+        sc.close();
+    } 
+}
+public class pao {
+    private String nome;
+    private double nota1;
+    private double nota2;
+
+    public pao(String name, double nota1, double nota2){
+        this.nome=name;
+        this.nota1=nota1;
+        this.nota2=nota2;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public void setNome(String nome){
+        this.nome=nome;
+    }
+
+    public double getNota1(){
+        return nota1;
+    }
+
+    public double getNota2(){
+        return nota2;
+    }
+}
+#EXERCICIO 9 O ULTIMO
+import java.util.Locale;
+import java.util.Scanner;
+
+public class salamaleico {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Quantas pessoas serão digitadas? ");
+		int n = sc.nextInt();
+
+		pao[] vetor = new pao[n];
+
+		for (int i = 0; i < n; i++) {
+			System.out.printf("Altura da %dº pessoa: ",i+1);
+			double alt = sc.nextDouble();
+			System.out.print("Gênero: ");
+            sc.nextLine();
+			char sexo = sc.next().charAt(0);
+			vetor[i] = new pao(sexo, alt);
+        }
+
+		double menor = vetor[0].getAlt();
+		double maior = vetor[0].getAlt();
+		double soma = 0;
+		double media = 0;
+		int count = 0;
+        int ct = 0;
+
+		for (int i = 0; i < n; i++) {
+			if (vetor[i].getAlt() > maior) {
+                maior = vetor[i].getAlt();
+            }
+		}
+
+        for (int i = 0; i < n; i++) {
+			if (vetor[i].getAlt() < menor) {
+                menor = vetor[i].getAlt();
+            }
+		}
+
+        System.out.println("Maior altura = "+maior);
+        System.out.println("Menor altura = "+menor);
+
+        for (int i = 0; i < n; i++) {
+			if(vetor[i].getSexo()=='F'){
+                soma += vetor[i].getAlt();
+                ct++;
+            }
+            else{
+                count++;
+            }
+        }
+
+        media = soma/ct;
+
+        System.out.println("Média da altura das mulheres: "+media);
+        System.out.println("Número de homens: "+count);
+
+        sc.close();
+    }
+}
+public class pao {
+    
+    private char sexo;
+    private double alt;
+
+    public pao(char sexo,double alt){
+        this.sexo=sexo;
+        this.alt=alt;
+    }
+
+    public char getSexo(){
+        return sexo;
+    }
+
+    public void setSexo(char sexo){
+        this.sexo=sexo;
+    }   
+
+    public double getAlt(){
+        return alt;
+    }
+}
+
+
+
+
+
+
+
+

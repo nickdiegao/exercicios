@@ -1,0 +1,92 @@
+#EXERCICIO 1
+import java.util.Scanner;
+
+public class enquanto {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int x = 0;
+		x = sc.nextInt();
+		
+		while (x != 2002) {
+			System.out.println("Senha Inválida");
+			x = sc.nextInt();
+		}
+	
+		System.out.println("Acesso Permitido");
+		
+		sc.close();
+	}
+
+}
+#EXERCICIO 2
+import java.util.Scanner;
+
+public class enquanto {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int x = sc.nextInt();
+		int y = sc.nextInt();
+		
+		while (x != 0 && y != 0) {
+			if (x > 0 && y > 0) {
+				System.out.println("primeiro");
+			}
+			else if (x < 0 && y > 0) {
+				System.out.println("segundo");
+			}
+			else if (x < 0 && y < 0) {
+				System.out.println("terceiro");
+			}
+			else {
+				System.out.println("quarto");
+			}
+			x = sc.nextInt();
+			y = sc.nextInt();
+		}
+		
+		sc.close();
+	}
+}
+#EXERCICIO 3
+import java.util.Scanner;
+
+public class enquanto {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int al = 0;
+		int gs = 0;
+		int dl = 0;
+		int cd = 0;
+		
+		cd = sc.nextInt();
+		
+		while (cd != 4) {
+			cd = sc.nextInt();
+			if (cd == 1){
+				al += 1;
+				}
+			if (cd == 2) {
+				gs += 1;
+			}
+			if (cd == 3) {
+				dl += 1;
+			}
+		}
+		System.out.println("Muito Obrigado!");
+		System.out.println("Alcool: "+al);
+		System.out.println("Gasolina: "+gs);
+		System.out.println("Diesel: "+dl);
+		
+		
+		sc.close();
+	}
+
+}
